@@ -1,0 +1,11 @@
+%html{:xmlns => "http://www.w3.org/1999/xhtml", "xml:lang" => "en", :lang => "en"} 
+	#content
+		#cHeading
+			%h1= "Add a recipe"
+		#add
+			%h2= "form"
+		%form{:action => "", :method => "post"}
+			%input{:type => "text", :name => "name"}
+			%input{:type => "textarea", :name => "ingredients"}
+			%input{:type => "textarea", :name => "description"}
+			%input{:type => "submit", :value => "Add"}
