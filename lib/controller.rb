@@ -6,24 +6,21 @@ get '/' do
 	haml :index
 end
 
-get '/list' do
-	'returns all recipes'
-end
-
 get '/edit/:id' do
 	"edit recipe details for #{params[:id]}"
-	haml :add
+	haml :detail
 end
 
 post '/add' do
 	coll = getConnection
 	doc = {"name" => params[:name], "ingredients" => params["ingredients"], "description" => params["description"], "type" => "database", "count" => 2}
 	coll.insert(doc)
-    	redirect to('/sample')
+    	redirect to('/list')
+
 end
 
 get '/add' do
-	haml :add
+	haml :detail
 end
 
 
@@ -32,13 +29,13 @@ def getConnection
 	coll = db["recipes"]
 end
 
-get '/sample' do
+get '/list' do
 	coll = getConnection
 	@recipes = Array.new
 	coll.find().each { |row| @recipes << row["name"] 
 		
 	}
-	haml :sample 
+	haml :list 
 end
 
 

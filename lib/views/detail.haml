@@ -4,7 +4,7 @@
 			%h1= "Add a recipe"
 		#add
 			%h2= "form"
-		%form{:action => "", :method => "post"}
+		%form{:action => "/add", :method => "post"}
 			%input{:type => "text", :name => "name"}
 			%input{:type => "textarea", :name => "ingredients"}
 			%input{:type => "textarea", :name => "description"}
