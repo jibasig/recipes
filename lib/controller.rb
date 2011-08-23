@@ -2,6 +2,11 @@ require 'sinatra';
 require 'haml';
 require 'mongo';
 
+
+class Recipe
+	attr_accessor :id, :name
+end
+
 get '/' do
 	haml :index
 end
@@ -32,7 +37,11 @@ end
 get '/list' do
 	coll = getConnection
 	@recipes = Array.new
-	coll.find().each { |row| @recipes << row["name"] 
+	coll.find().each { |row| 
+		recipe = Recipe.new
+		recipe.id = row["id"]
+		recipe.name = row["name"]
+		@recipes << recipe 
 		
 	}
 	haml :list 

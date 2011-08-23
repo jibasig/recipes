@@ -1,5 +1,0 @@
-%h1= "List of Recipes" 
-%h1= "#{body}!"
-
-- body.each do |recipe|
-%h2= "#{recipe}"

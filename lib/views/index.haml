@@ -1,1 +1,23 @@
-.content List of recipes
+%html{:xmlns => "http://www.w3.org/1999/xhtml", "xml:lang" => "en", :lang => "en"} 
+%head
+	<link rel="stylesheet" href="/css/bootstrap-1.1.0.css">
+%body
+	.topbar
+		.fill
+			%div{:class => "container fixed"}
+				%h3
+					%a{:href => "#"}= "Recipes"
+				%ul
+					%li{:class=> "active"}
+						%a{:href => "#"}= "Home"
+					%li
+						%a{:href => "#"}= "List"
+	.container
+		.hero-unit
+			%h1= "Recipes Manager"
+			%p= "Manage all your home recipes within this application"
+			%p
+				%a{:class => "btn primary large"}= "Learn more"
+	
+
+	.footer 

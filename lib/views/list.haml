@@ -1,10 +1,13 @@
 %html{:xmlns => "http://www.w3.org/1999/xhtml", "xml:lang" => "en", :lang => "en"} 
-	#content
-		#cHeading
+	.header
+	.content
+		.lHeading
 			%h1= "List of Recipes" 
-		#recipes
+		.lRecipes
 			%ul
 				- @recipes.each do |recipe|
 					%li
-						%a{:href => "/edit/#{recipe}"}
-							= recipe
+						%a{:href => "/edit/#{recipe id}"}
+							= #{recipe name}
+	.footer							
+
